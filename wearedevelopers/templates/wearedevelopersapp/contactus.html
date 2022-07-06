@@ -1,0 +1,94 @@
+{%extends 'wearedevelopersapp/base.html' %}
+{%block contactus%}
+
+<div class="lh-1 " >
+    <center>
+        <h1 class="mt-1 text-decoration-underline mb-3" >Contact Us</h1></center>
+        <center>
+            <div class="w-50 ">
+                <form class="w-100 text-center" method="POST">
+                    {%csrf_token%}            
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label for="exampleInputEmail1" class="form-label">First Name</label>
+                            <center>
+                            <input type="text" class="form-control  w-75" id="exampleInputEmail1" required aria-describedby="emailHelp" name="firstname"></center>
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="exampleInputPassword1" class="form-label">Last Name</label>
+                              <center>
+                            <input type="text" required class="form-control w-75" id="exampleInputPassword1" name="lastname"></center>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="mb-3 col-6">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <center>
+                            <input type="email" class="form-control  w-75" required name="email" id="exampleInputEmail1" aria-describedby="emailHelp"></center>
+                        </div>
+                        <div class="mb-3 col-6">
+                        <label for="exampleInputPassword1" class="form-label">Phone</label>
+                            <center>
+                        <input type="number" required class="form-control w-75" name="phone" id="exampleInputPassword1"></center>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label for="exampleInputEmail1" class="form-label">Country</label>
+                            <center>
+                            <input type="text" required class="form-control  w-75" name="country" id="exampleInputEmail1" aria-describedby="emailHelp"></center>
+                        </div>
+                        <div class="mb-3 col-6">
+                        <label for="exampleInputPassword1" class="form-label">Company</label>
+                            <center>
+                        <input type="text" required class="form-control w-75" name="company" id="exampleInputPassword1"></center>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label for="exampleInputEmail1" class="form-label">Industry</label>
+                            <center>
+                            <input type="text" required class="form-control  w-75" name="industry" id="exampleInputEmail1" aria-describedby="emailHelp"></center>
+                        </div>
+                        <div class="mb-3 col-6">
+                        <label for="exampleInputPassword1" class="form-label">Services/Technology</label>
+                            <center>
+                        <input type="text" required class="form-control w-75" name="servicesbytechnology" id="exampleInputPassword1"></center>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label for="exampleInputEmail1" class="form-label">Inquiry Category</label>
+                            <center>
+                            <input type="text" required name="inquiry" class="form-control  w-75" id="exampleInputEmail1" aria-describedby="emailHelp"></center>
+                        </div>
+                        <div class="mb-3 col-6">
+                        <label for="exampleInputPassword1" class="form-label">Are you an existing client?</label>
+                            <center>
+                                <input type="radio" required name="existedclient" value="yes"> Yes
+                                <input type="radio" required name="existedclient" value="no"> No<br>
+                            </center>
+                        </div>        
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-12">
+                            <label for="exampleInputEmail1" class="form-label">How can we help you?</label>
+                            <center>
+                            <textarea name="suggestion" required class="form-control" style="width:88%" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            </textarea></center>
+                        </div>
+                    </div>       
+                    <!--
+                    <div class="mb-3 form-check text-dark">
+                      <input type="checkbox" class="form-check-input position-absolute  end-40" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    -->                                             
+                    <button type="submit" class="btn btn-primary">Submit</button>                    
+                </form>
+            </div>
+    </center>
+    <br>
+</div>
+
+{%endblock%}

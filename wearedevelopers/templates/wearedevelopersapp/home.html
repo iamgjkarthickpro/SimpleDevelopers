@@ -1,0 +1,19 @@
+{%extends 'wearedevelopersapp/base.html' %}
+{%block search%}
+<form class="d-flex" role="search" method="POST" action="/searchresult/" autocomplete="off">
+    {%csrf_token%}
+    <input class="form-control me-2" list="blogs" name="search" type="search" placeholder="Search blogs" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>  
+<datalist id="blogs">
+{%for i in blogs%}
+<option>{{i.title}}</option>
+{%endfor%}
+</datalist>
+{%endblock search%}
+{%block home%}
+{%load static%}
+
+<img src="{%static 'home.jpg' %}" width="100%" alt="">
+
+{%endblock home%}

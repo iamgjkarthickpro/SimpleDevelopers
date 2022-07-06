@@ -1,0 +1,28 @@
+{%extends 'wearedevelopersapp/base.html' %}
+{%block otp%}
+{%load static%}
+<br>
+<div class="container">
+<div class="row">
+    <div class="col-12">
+        <div class="card" style="width:100%;">                
+            <div class="card-body">                  
+              <h5 class="card-title text-warning">User SIgnup With Otp and Email</h5>
+              <p class="card-text text-success">User registration systems are screens, forms, or profile pages that request information from a user to create a web-based account or profile.</p>
+              <form method="POST">
+                {%csrf_token%}
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Enter Otp</label>
+                  <input type="number" name="otp" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">                    
+                </div>                  
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+              <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+            </div>
+          </div>              
+    </div>        
+</div>
+</div>
+
+<br>
+{%endblock otp%}

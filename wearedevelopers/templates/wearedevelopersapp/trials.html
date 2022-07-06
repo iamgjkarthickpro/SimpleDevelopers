@@ -1,0 +1,83 @@
+{%extends 'wearedevelopersapp/base.html' %}
+{%block trials%}
+{%load static%}
+<br>
+<div class="container ">
+  
+  <div class="row">
+    
+    <div class="col-4">
+      <a href="/signup/" class="text-decoration-none">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title text-warning">{{item.title}}User Signup With Otp and Email</h5>
+            <p class="card-text text-success">User registration systems are screens, forms, or profile pages that
+              request information from a user to create a web-based account or profile.</p>
+            <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+          </div>
+        </div>
+      </a>
+    </div>
+    
+    <div class="col-4">
+      <a href="/signin/" class="text-decoration-none">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title text-warning">User Signin</h5>
+          <p class="card-text text-success">The user credentials are typically some form of username and a matching
+            password, and these credentials themselves are sometimes referred to as a login (or logon, sign-in,
+            sign-on). In practice, modern secure systems often require a second factor such as email or SMS
+            confirmation for extra security.</p>
+          <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+        </div>
+      </div>
+      </a>
+    </div>    
+
+    <div class="col-4">
+      <a href="/logout/" class="text-decoration-none">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title text-warning">User Signout <br><span class="text-info"> Current User:{{request.user}}</span></h5>
+          <p class="card-text text-success">Loging out means to end access to a computer system or a website. Logging out informs the computer or website that the current user wishes to end the login session. Log out is also known as log off, sign off or sign out.</p>
+          <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+        </div>
+      </div>
+      </a>
+    </div>    
+    
+  </div>
+  <br>
+</div>
+{%if is_paginated%}
+<nav class="d-flex justify-content-center wow fadeIn">
+  <ul class="pagination pg-blue">
+    {%if page_obj.has_previous%}
+    <!--Arrow left-->
+    <li class="page-item ">
+      <a class="page-link" href="?page={{ page_obj.preivous_page_number }}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    {%endif%}
+    <li class="page-item active">
+      <a class="page-link" href="?page={{page_obj.number}}">{{page_obj.number}}
+        <span class="sr-only">(current)</span>
+      </a>
+    </li>
+    {%if page_obj.has_next%}
+    <li class="page-item">
+      <a class="page-link" href="?page={{page_obj.next_page_number}}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    {%endif%}
+  </ul>
+</nav>
+<!--Pagination-->
+{%endif%}
+<br>
+
+{%endblock%}

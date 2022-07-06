@@ -1,0 +1,44 @@
+{%extends 'wearedevelopersapp/base.html' %}
+{%block addblog%}
+{%load static%}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Add Blog</h5>
+                    <form method="POST" class="text-secondary" enctype="multipart/form-data">
+                        {%csrf_token%}
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Blog Title</label>
+                            <input type="text" id="email" required class="form-control" name="title"
+                                aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Blog Context</label>                            
+                            <textarea class="text-start" name="context" rows="10" cols="100">
+                            </textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Blog Image</label>
+                            <input type="file" name="image" required class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <br>
+</div>
+
+<br>
+
+{%endblock addblog%}

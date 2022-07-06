@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {%load static%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We are developers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+    crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    {%include 'messages.html'%}
+</head>
+
+<body id="colorselection">
+  <nav class="navbar navbar-expand-lg bg-dark ">
+    <div class="container-fluid">
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="/tele/"><img src="{%static 'wearedevelopers.png' %}" alt="" width="50px"
+            height="50px"><span class="text-light"><small><em> med.bot</em></small></span></a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 nav-fill">
+          <li class="nav-item">
+            <a class="nav-link text-light" aria-current="page" href="">Find Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="">Video Consult</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="">Medicines</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="">Lab Tests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="">Surgeries</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="">For Corportes</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light text-start" href="#" id="navbarDarkDropdownMenuLink"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              For Providers
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="">med.bot prime</a></li>
+              <li><a class="dropdown-item" href="">Software for providers</a></li>
+              <li><a class="dropdown-item" href="">List your practice for free</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light text-start" href="#" id="navbarDarkDropdownMenuLink"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Security & help
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="">Data security</a></li>
+              <li><a class="dropdown-item" href="">Help</a></li>              
+            </ul>
+          </li>
+          {%if user.is_authenticated%}
+          {%else%}
+          <li class="nav-item">
+            <a class="nav-link text-light" href="">Login / Signup </a>
+          </li>
+          {%endif%}
+        </ul>        
+      </div>
+    </div>
+  </nav>    
+  {%block telehome%}
+  {%endblock telehome%}
+
+  {%block aboutus%}
+  {%endblock aboutus%}
+
+  {%block contactus%}
+  {%endblock contactus%}
+
+  {%block blogs%}
+  {%endblock blogs%}
+
+  {%block videostreaminghome%}
+  {%endblock videostreaminghome%}
+
+  {%block trials%}
+  {%endblock trials%}
+
+  {%block signup%}
+  {%endblock signup%}
+
+  {%block signin%}
+  {%endblock signin%}
+
+  {%block otp%}
+  {%endblock otp%}
+
+  {%block addblog%}
+  {%endblock addblog%}
+  
+  {%block editblog%}
+  {%endblock editblog%}
+  
+  <footer class="text-center text-lg-start text-muted lh-1 position-responsive bottom-0 end-0 start-0"
+    style="background-color:#202A44">
+
+    <br>
+    <small>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+
+          <div class="row mt-3">
+
+            <div class="col-md-1 mx-auto mb-4" style="width:16%">
+
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                med.bot
+              </h6>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">About</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Blog</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Careers</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Press</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Contact Us</a>
+              </p>
+            </div>
+
+            <div class="col-md-1 mx-auto mb-4" style="width:16%">
+
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                For patients
+              </h6>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Search for doctors</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Search for clinics</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Search for hospitals</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Book Diagnostic Test</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Book Full Body Checkups</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">med.bot plus</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Covid Hosptial listing</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">med.bot Care Clinics</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Read health articles</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Read about medicines</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">med.bot drive</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Health app</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">med.bot Plus infinity</a>
+              </p>
+            </div>
+
+            <div class="col-md-1 mx-auto mb-4" style="width:16%">
+
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                For doctors
+              </h6>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">med.bot Profile</a>
+              </p>
+              <br>
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                For clinics
+              </h6>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Ray by med.bot</a>
+                
+                
+                
+              </p>
+              <p class="text-white"><a href="#!" class="text-reset text-decoration-none">med.bot Reach</a></p>
+              <p class="text-white"><a href="#!" class="text-reset text-decoration-none">Ray Tab</a></p>
+              <p class="text-white"><a href="#!" class="text-reset text-decoration-none">med.bot Pro</a></p>
+            </div>
+
+            <div class="col-md-1 mx-auto mb-4" style="width:16%">
+
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                For hospitals
+              </h6>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Insta by med.bot</a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Qikwell by med.bot</a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">med.bot Profile</a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">meb.bot Reach</a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">med.bot Drive</a>
+              </p>
+              <br>
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                For Corporates
+              </h6>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Wellness Plans</a>
+              </p>
+            </div>
+
+            <div class="col-md-1 mx-1 mb-4" style="width:16%">
+
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                More
+              </h6>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Help</a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Developers</a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Privacy Policy</a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Terms & Conditions</a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Healthcare Directory</a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">med.bot Health Wiki</a>
+              </p>
+            </div>
+            
+
+            <div class="col-md-1  mx-auto mb-4" style="width:16%;">
+
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                Social
+              </h6>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Facebook </a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Twitter </a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Linkedin </a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Youtube </a>
+              </p>
+              <p class="text-white">
+                <a href="" class="text-reset text-decoration-none">Github </a>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+      <center>
+        <h3 class="text-light">med.bot</h3>
+      </center>
+      <div class="row mt-3">
+        <center>
+        <div class="col-1 mx-3 mb-4 text-end w-25">
+          <p class="text-white">
+            <a href="#!" class="text-reset text-decoration-none" style=" white-space: nowrap;">Copyright © 2017,
+              Practo. All rights reserved.</a>
+          </p>
+        </div>
+      </center>
+      </div>
+    </small>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+
+  <script>
+    function myFunction() {
+
+      document.getElementById('colorsetting').style.display = 'block';
+    }
+
+
+  </script>
+
+</body>
+
+</html>

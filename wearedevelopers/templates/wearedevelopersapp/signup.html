@@ -1,0 +1,107 @@
+{%extends 'wearedevelopersapp/base.html' %}
+{%block signup%}
+{%load static%}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card" style="width: 100%;">                
+                <div class="card-body">                  
+                  <h5 class="card-title text-warning">User Signup With Otp and Email</h5>
+                  <p class="card-text text-success">User registration systems are screens, forms, or profile pages that request information from a user to create a web-based account or profile.</p>
+                  <form method="POST" class="text-secondary">
+                    {%csrf_token%}
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Select Country Code</label>
+                      <select required  name="countrycode" class="form-control" id="exampleInputEmail1">
+                        {%for i in objs%}
+                        <option value={{i.country_code}}>{{i.country}}: {{i.country_code}}</option>
+                        {%endfor%}
+                      </select>
+                      
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+                      <input type="number" required name="mobile" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your Mobile Number with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">User Name</label>
+                      <input type="text" required id="username" name="username" class="form-control"  aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your User Name with anyone else.</div>
+                    </div>                    
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" required id="email" class="form-control" name="email" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input required type="password" name="password1" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                      <input required type="password" name="password2" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                  <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                </div>
+              </div>              
+        </div>  
+        
+    </div>
+    
+    
+    
+    <br>    
+</div>
+
+<br>
+<script>
+  $(document).ready(function(){
+      $("#username").change(function () {
+          var username = $(this).val();
+          $.ajax({
+              url: '/validate_username/',
+              data: {
+                  'username': username
+              },
+              dataType: 'json',
+              success: function(data){
+                  if (data.is_taken){
+                      alert("A user with this username already exists");
+                      document.getElementById('username').value = ''
+                      
+                  }
+              }
+          });
+      });
+  });
+</script>
+<script>
+  $(document).ready(function(){    
+      $("#email").change(function () {        
+          var email = $(this).val();
+          $.ajax({
+              url: '/validate_email/',
+              data: {
+                  'email': email
+              },
+              dataType: 'json',
+              success: function(data){
+                  if (data.is_taken){
+                      alert("A user with this email already exists");
+                      document.getElementById('email').value = ''
+                  }
+              }
+          });
+      });
+  });
+</script>
+
+{%endblock signup%}

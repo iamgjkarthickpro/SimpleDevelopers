@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {%load static%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>We are developers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+    crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    {%include 'messages.html'%}
+</head>
+
+<body id="colorselection">
+  <nav class="navbar navbar-expand-lg bg-dark ">
+    <div class="container-fluid">
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="/"><img src="{%static 'wearedevelopers.png' %}" alt="" width="50px"
+            height="50px"><span class="text-light"><small><em> Simply Developers</em></small></span></a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 nav-fill">
+          <li class="nav-item">
+            <a class="nav-link text-light" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/contactus">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/aboutus">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/blogs">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="/trials">Trial Functions</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light text-start" href="#" id="navbarDarkDropdownMenuLink"
+              role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Demo Projects
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="/videostreaming/">Video Streaming</a></li>
+              <li><a class="dropdown-item" href="/tele/">Tele Consultation</a></li>
+            </ul>
+          </li>
+          {%block search%}
+          {%endblock search%}
+          <li class="nav-item">
+            <i class="fa-solid fa-gear mt-2" style="color:red;" onmouseover="myFunction()"></i>
+          </li>
+
+
+
+        </ul>        
+      </div>
+    </div>
+  </nav>
+  
+  <div style="display:none;position:absolute;left:95%"
+    onmouseleave="document.getElementById('colorsetting').style.display='none'" id="colorsetting">
+    <center>
+      <!---->
+      <small onclick="document.getElementById('colorselection').style.cssText='background-color:black;color:white;'"
+        class="text-dark bg-light btn btn-dark">Black</small>
+      <br>
+      <small onclick="document.getElementById('colorselection').style.cssText='background-color:white;color:black'"
+        class="text-light bg-dark btn btn-light">White</small>
+
+      <!--<small onclick="document.querySelectorAll('#colorselection, #home, #aboutus, #contactus').style.cssText='background-color:black;color:white'" class="text-dark bg-light btn btn-dark">Black</small>
+    <br>
+    <small onclick="document.querySelectorAll('#colorselection, #home, #aboutus, #contactus').style.cssText='background-color:white;color:black'" class="text-light bg-dark btn btn-light">White</small>-->
+    </center>
+  </div>
+  {%block home%}
+  {%endblock home%}
+
+  {%block aboutus%}
+  {%endblock aboutus%}
+
+  {%block contactus%}
+  {%endblock contactus%}
+
+  {%block blogs%}
+  {%endblock blogs%}
+
+  {%block videostreaminghome%}
+  {%endblock videostreaminghome%}
+
+  {%block trials%}
+  {%endblock trials%}
+
+  {%block signup%}
+  {%endblock signup%}
+
+  {%block signin%}
+  {%endblock signin%}
+
+  {%block otp%}
+  {%endblock otp%}
+
+  {%block addblog%}
+  {%endblock addblog%}
+  
+  {%block editblog%}
+  {%endblock editblog%}
+  
+  <footer class="text-center text-lg-start text-muted lh-1 position-responsive bottom-0 end-0 start-0"
+    style="background-color:#202A44">
+
+    <br>
+    <small>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+
+          <div class="row mt-3">
+
+            <div class="col-md-1 mx-auto mb-4" style="width: 20%">
+
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                services
+              </h6>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Web Developement</a>
+              </p>
+              <p class="text-white">
+                <a href="#!" class="text-reset text-decoration-none">Blockchain</a>
+              </p>
+            </div>
+
+            <div class="col-md-1 mx-auto mb-4" style="width: 20%">
+
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                products
+              </h6>
+              <p class="text-white">
+                <a href="/videostreaming/" class="text-reset text-decoration-none">Video Streaming App</a>
+              </p>
+            </div>
+
+            <div class="col-md-1 mx-1 mb-4" style="width: 20%">
+
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                discover us
+              </h6>
+              <p class="text-white">
+                <a href="/aboutus" class="text-reset text-decoration-none">About</a>
+              </p>
+            </div>
+            <div class="col-1  mx-auto mb-4 vl" style="width: 1%"></div>
+
+            <div class="col-md-1  mx-auto mb-4" style="width: 20%;">
+
+              <h6 class="text-uppercase fw-bold mb-4" style="color:rgb(134, 134, 102);">
+                connect with us
+              </h6>
+              <p class="text-white">
+                <a href="/contactus" class="text-reset text-decoration-none">Contact </a>
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+      <hr style="background-color:white;">
+      <div class="row mt-3">
+        <div class="col-1 mx-3 mb-4 text-end w-25">
+          <p class="text-white">
+            <a href="#!" class="text-reset text-decoration-none" style=" white-space: nowrap;">© 2007-2022
+              EcommercePro.com</a>
+          </p>
+        </div>
+      </div>
+    </small>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+
+  <script>
+    function myFunction() {
+
+      document.getElementById('colorsetting').style.display = 'block';
+    }
+
+
+  </script>
+
+</body>
+
+</html>

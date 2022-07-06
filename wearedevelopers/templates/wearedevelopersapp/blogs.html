@@ -1,0 +1,61 @@
+{%extends 'wearedevelopersapp/base.html' %}
+{%block blogs%}
+{%load static%}
+<br>
+<div class="container">
+  <div class="row">
+    {%for item in object_list%}
+
+    <div class="col-4">
+      <a href="/blogdetails/{{item.id}}/" class="text-decoration-none">
+        <div class="card" style="width: 18rem;">
+          <img src="{{item.image.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title text-warning">{{item.title}}</h5>
+            <p class="card-text text-success">{{item.context}}</p>
+            <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+          </div>
+          <p class="text-center "><a class="text-decoration-none mx-3 "  href="/editblog/{{item.id}}/">Edit</a><a class="text-decoration-none mx-3"  href="/deleteblog/{{item.id}}/">Delete</a></p>
+          
+        </div>
+      </a>
+      
+    </div>
+    
+    {%endfor%}
+  </div>
+  <br>
+</div>
+<a class="text-decoration-none" style="position:relative;left:75%" href="/addblog/">Add Blog</a>
+{%if is_paginated%}
+<nav class="d-flex justify-content-center wow fadeIn">
+  <ul class="pagination pg-blue">
+    {%if page_obj.has_previous%}
+    <!--Arrow left-->
+    <li class="page-item ">
+      <a class="page-link" href="?page={{ page_obj.preivous_page_number }}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    {%endif%}
+    <li class="page-item active">
+      <a class="page-link" href="?page={{page_obj.number}}">{{page_obj.number}}
+        <span class="sr-only">(current)</span>
+      </a>
+    </li>
+    {%if page_obj.has_next%}
+    <li class="page-item">
+      <a class="page-link" href="?page={{page_obj.next_page_number}}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+    {%endif%}
+  </ul>
+</nav>
+<!--Pagination-->
+{%endif%}
+<br>
+
+{%endblock%}

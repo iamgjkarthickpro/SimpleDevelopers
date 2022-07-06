@@ -1,0 +1,46 @@
+{%extends 'wearedevelopersapp/base.html' %}
+{%block signin%}
+{%load static%}
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card" style="width: 100%;">                
+                <div class="card-body">                  
+                  <h5 class="card-title text-warning">User Signin <span class="text-start" style="position:relative;left:50%;color:black">Current User: {{request.user}}</span> </h5>
+                  <p class="card-text text-success">The user credentials are typically some form of username and a matching
+                    password, and these credentials themselves are sometimes referred to as a login (or logon, sign-in,
+                    sign-on). In practice, modern secure systems often require a second factor such as email or SMS
+                    confirmation for extra security.</p>
+                  <form method="POST" class="text-secondary">
+                    {%csrf_token%}                                                
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" required id="email" class="form-control" name="email" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" required name="password" class="form-control" id="exampleInputPassword1">
+                    </div>                    
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                  <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+                </div>
+              </div>              
+        </div>  
+        
+    </div>
+    
+    
+    
+    <br>    
+</div>
+
+<br>
+
+{%endblock signin%}
